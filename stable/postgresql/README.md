@@ -61,6 +61,7 @@ The following tables lists the configurable parameters of the PostgreSQL chart a
 | `postgresqlUsername`                 | PostgreSQL admin user                              | `postgres`                                                |
 | `postgresqlPassword`                 | PostgreSQL admin password                          | _random 10 character alphanumeric string_                 |
 | `postgresqlDatabase`                 | PostgreSQL database                                | `nil`                                                     |
+| `podLabels`						   | Additional labels to apply to the statefulset pod(s). | `{}`													|
 | `service.type`                       | Kubernetes Service type                            | `ClusterIP`                                               |
 | `service.port`                       | PostgreSQL port                                    | `5432`                                                    |
 | `service.nodePort`                   | Kubernetes Service nodePort                        | `nil`                                                     |
@@ -93,6 +94,7 @@ The following tables lists the configurable parameters of the PostgreSQL chart a
 | `readinessProbe.failureThreshold`    | Minimum consecutive failures for the probe to be considered failed after having succeeded.    |  6             |
 | `readinessProbe.successThreshold`    | Minimum consecutive successes for the probe to be considered successful after having failed   |  1             |
 | `metrics.enabled`                    | Start a prometheus exporter                        | `false`                                                   |
+| `metrics.podLabels`				   | Additional pod labels to apply to the metrics pod(s). | `nil`												    |
 | `metrics.service.type`               | Kubernetes Service type                            |  `ClusterIP`                                              |
 | `metrics.service.annotatios`         | Additional annotations for metrics exporter pod    |  `{}`                                                     |
 | `metrics.service.loadBalancerIP`     | loadBalancerIP if redis metrics service type is `LoadBalancer` | `nil`                                         |
